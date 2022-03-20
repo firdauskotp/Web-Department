@@ -1096,9 +1096,9 @@ label start:
 
     label label_Ahmed_chat:
         python:
-            def ahmed_happy_func():
+            def ahmed_scenes(sprite):
                 renpy.scene("field")
-                renpy.show("ah center")
+                renpy.show(sprite)
             # def ahmed_neutral_func():
             #     scene field
             #     show an:
@@ -1113,27 +1113,21 @@ label start:
             #         center
         menu:
             "Can you briefly introduce yourself":
-                ahmed_happy_func()
+                $ ahmed_scenes("ah")
                 # scene field
                 # show ah:
                 #     center
                 a "Heyy, my name is Ahmed"
                 a "I'm from Egypt!"
                 p "Wow, like Moh..."
-                # ahmed_scowl_func()
-                scene field
-                show asc:
-                    center
+                $ ahmed_scenes("asc")
                 a "Salah, right?"
                 p "Yeah! Why you look so sad?"
                 a "Because it is pretty obvious what people look at Egypt as"
                 p "Isn't it a good thing?"
                 a "It is, but there is more stuff to Egypt you know?"
                 p "True"
-                # ahmed_smile_func()
-                scene field
-                show asm:
-                    center
+                $ ahmed_scenes("asm")
                 a "And I am not in Egypt anymore!"
                 p "Eh? Oh you're in Malaysia still?"
                 p "Used to, but no longer, I am in Turkey now!"
@@ -1158,19 +1152,13 @@ label start:
                 a "Yup!"
                 a "Oh, I've also been in KidoCode since 2019."
                 p "Wow, that is a long time!"
-                ahmed_happy_func()
-                # scene field
-                # show ah:
-                #     center
+                $ ahmed_scenes("ah")
                 a "Indeed, time flies"
                 a "Now I am one of the three managers of the web department that you will meet in this game!"
                 p "I see I see"
                 p "Even before you are a manager, you have the passion for web development?"
                 a "Of course!"
-                # ahmed_neutral_func()
-                scene field
-                show an:
-                    center
+                $ ahmed_scenes("an")
                 a "Habibi..."
                 p "Yes?"
                 a "Remember, without passion, it is hard to do what you love"
@@ -1178,19 +1166,13 @@ label start:
                 a "No matter what, make sure you have the passion for something, and find the correct people who can grow your passion"
                 if firdaus_checker == 1:
                     p "Same as"
-                    # ahmed_happy_func()
-                    scene field
-                    show ah:
-                        center
+                    $ ahmed_scenes("ah")
                     a "What Firdaus said?"
                     p "Kinda"
                     a "Yeah, we kinda have similar thoughts"
                 else:
                     p "I see"
-                    # ahmed_happy_func()
-                    scene field
-                    show ah:
-                        center
+                    $ ahmed_scenes("ah")
                     a "Remember to always follow your passion as long as it is something that is good and legal"
                     p "I see a minor disclaimer there"
                     a "Ahaha"
@@ -1200,16 +1182,10 @@ label start:
                 a "There are two roles that are"
                 a "Managers and Executors"
                 p "Executors?"
-                # ahmed_neutral_func()
-                scene field
-                show an:
-                    center
+                $ ahmed_scenes("an")
                 a "They are involved in executing"
                 p "0-0"
-                # ahmed_happy_func()
-                scene field
-                show ah:
-                    center
+                $ ahmed_scenes("ah")
                 a "Tests and instructions!"
                 p "Oh... what kinda tests and instructions?"
                 a "Well, executors are like the moderators"
@@ -1223,10 +1199,7 @@ label start:
                 p "So if I join, one of you three will interview me?"
                 a "Indeed! And if Firdaus interviews you, you might not even meet him"
                 p "His camera isn't working?"
-                # ahmed_smile_func()
-                scene field
-                show asm:
-                    center
+                $ ahmed_scenes("asm")
                 a "It is, but..."
                 a "You have to see for yourself!"
                 p "Sounds ominous!"
@@ -1239,10 +1212,7 @@ label start:
                 a "My specialty is more to front-end development"
                 a "Specifically, JavaScript!"
                 p "Wow, so you work with JavaScript frameworks as well?"
-                # ahmed_smile_func()
-                scene field
-                show asm:
-                    center
+                $ ahmed_scenes("asm")
                 a "Yeah, for now I am focusing on React and Vue"
                 p "Ahh I see, are they useful?"
                 a "Depends on what you are using for"
@@ -1256,10 +1226,7 @@ label start:
                     a "Of course!"
                     p "0-0"
                 p "Alright, thanks for the advice habibi"
-                # ahmed_happy_func()
-                scene field
-                show ah:
-                    center
+                $ ahmed_scenes("ah")
                 a "No problem, habibi"
                 a "I also try a lot of new things. I used to try applications like Telegram bot like the other two managers"
                 p "How can you handle a lot of things at the same time?"
@@ -1268,10 +1235,7 @@ label start:
                 a "The method you use to learn is also imporant"
                 a "Depending on those factors, you can properly plan in what order you should learn what you are planning to"
                 p "I see, in that way, I can properly understand what I am learning on"
-                # ahmed_smile_func()
-                scene field
-                show asm:
-                    center
+                $ ahmed_scenes("asm")
                 a "Indeed!"
                 jump label_Ahmed_End_Convo
             "Any advice?":
@@ -1281,10 +1245,7 @@ label start:
                 p "Why?"
                 a "They find it hard without even trying."
                 a "Which is why, I advise this"
-                # ahmed_smile_func()
-                scene field
-                show asm:
-                    center
+                $ ahmed_scenes("asm")
                 a "Do you like puzzles?"
                 a "What about solvintg an issue?"
                 a "Maybe even innovate?"
@@ -1300,16 +1261,10 @@ label start:
                 a "As you can see, they are all connected!"
                 p "Wow, I never thought about it that way"
                 p "But what if that person don't like solving an issue, a puzzle or innovate?"
-                # ahmed_neutral_func()
-                scene field
-                show an:
-                    center
+                $ ahmed_scenes("an")
                 a "Hmm"
                 a "Good question"
-                # ahmed_happy_func()
-                scene field
-                show ah:
-                    center
+                $ ahmed_scenes("ah")
                 a "Which of course I can asnwer!"
                 a "You need to change your perspective!"
                 p "Change perspectives?"
@@ -1328,17 +1283,11 @@ label start:
                 play music "audio/Tobias Gregson ~ The Great Detective's Great Foe - The Great Ace Attorney Chronicles.mp3" fadein 3.0 volume 0.5
                 jump label_Ahmed_End_Convo
             "What are your socials?":
-                # ahmed_neutral_func()
-                scene field
-                show an:
-                    center
+                $ ahmed_scenes("an")
                 a "I don't really share them, sorry"
                 p "I see, it's okay"
                 a "But..."
-                # ahmed_happy_func()
-                scene field
-                show ah:
-                    center
+                $ ahmed_scenes("ah")
                 a "I can share you my LinkedIn!"
                 p "Ahh, I see."
                 a "You can click the link after this to redirect to my LinkedIn"
@@ -1368,18 +1317,12 @@ label start:
                         jump lblNasrin
                     "Firdaus":
                         if firdaus_checker == 0:
-                            # ahmed_scowl_func()
-                            scene field
-                            show asc:
-                                center
+                            $ ahmed_scenes("asc")
                             a "He should be here helping me"
                             p "I am not surprised, seems like a lot of work"
                             a "It is, anyways, Firdaus likes to go over the caffeine limit"
                             a "You can find him in a cafe not that far from here"
-                            # ahmed_happy_func()
-                            scene field
-                            show ah:
-                                center
+                            $ ahmed_scenes("ah")
                             a "You can exercise while walking"
                             p "Is it that far?"
                             a "No, let me show it to you on your smartphone's map"
@@ -1387,18 +1330,12 @@ label start:
                             a "It's okay, I am sure a treat awaits you there"
                             p "What?!"
                         else:
-                            # ahmed_scowl_func()
-                            scene field
-                            show asc:
-                                center
+                            $ ahmed_scenes("asc")
                             a "Sigh"
                             p "He is still in the cafe right?"
                             a "Yeah, and I will have to do his part soon..."
                             p "That's upsetting"
-                            # ahmed_smile_func()
-                            scene field
-                            show asm:
-                                center
+                            $ ahmed_scenes("asm")
                             a "Ahaha, it's okay, don't worry"
                             p "...Alright..."
                         jump lblAhmed
