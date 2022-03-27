@@ -1,4 +1,4 @@
-﻿
+
 #define convos
 define f = Character("Firdaus")
 define n = Character("Nasrin")
@@ -12,6 +12,7 @@ image coffee = im.Scale("locations/coffeeshopfront.jpg",1920,1080)
 image field = im.Scale("locations/field.png",1920,1080)
 image cafe = im.Scale("locations/rasel-cafe.jpg",1920,1080)
 image school = im.Scale("locations/School-Gate.jpg",1920,1080)
+image error = im.Scale("codes/result.png",1920,1080)
 
 #define location with sprites
 
@@ -73,8 +74,6 @@ label start:
     show ns:
         right
 
-
-
     n "Good day!"
 
     n "May I know your name?"
@@ -104,6 +103,11 @@ label start:
             $ var_name = 1
 
     p "Good day! My name is [player_name]"
+
+    menu:
+        "test":
+            $ final_trio = 1
+            jump lblEnd
 
     if var_name_times >0:
         hide ns
@@ -1061,10 +1065,10 @@ label start:
             p "But I can call you habibi Ahmed as well, deal?"
             a "Why not?"
         else:
-            a "Ahh I see, may I use that word?"
-            p "Why not?"
-            a "Alright habibi Ahmed"
-            p "That's more like it"
+            p "Ahh I see, may I use that word?"
+            a "Why not?"
+            p "Alright habibi Ahmed"
+            a "That's more like it"
         p "What are you doing here habibi?"
         p "I heard about some sort of event?"
         a "Yeah, we want to organise a football tournament for web department."
@@ -1357,6 +1361,7 @@ label start:
     label lblEnd:
         stop music fadeout 3.0
         play music "audio/DFInstrumental.mp3" fadein 3.0 volume 0.5
+        scene school
         show nh:
             center
         show fh with moveinleft:
@@ -1365,7 +1370,7 @@ label start:
         show ah with moveinright:
             right
         
-        n "Thank you for trying this game!"
+        n "Thank you for trying this game, [player_name]!"
         a "We hope to see you some day!"
         f "And even if you don't, never stop improving!"
         p "Thank you everyone for your time"
@@ -1379,9 +1384,9 @@ label start:
             hide nh
             hide fh
             hide ah
-            show ncc:
+            show nc:
                 center
-            show fsc:
+            show fsmirk:
                 left
             show asc:
                 right
@@ -1394,8 +1399,90 @@ label start:
             a "*Praying*"
             p "(Why are these guys overdramatic)"
             p "Well, it has something to do with this issue"
+            jump lblTeamUp
+        else:
+            return
 
     label lblTeamUp:
-        stop music fadeout 3.0
-        play music "audio/Partners ~ The Game is Afoot! - The Great Ace Attorney 2 Music Extended.mp3" fadein 3.0 volume 0.5
 
+        scene error with dissolve
+
+        p "So my friends and I were working on a project and we have this error"
+
+        scene school with dissolve
+
+        show nc:
+            center
+        show fsmirk:
+            left
+        show asc:
+            right
+        p "can you..."
+
+        hide nc
+        hide fsmirk
+        hide asc
+
+        show nh:
+            center
+        show fsmile:
+            left
+        show ah:
+            right
+
+        p "Guys..."
+        
+        stop music fadeout 3.0
+        play music "audio/Overture to Pursuit ~ Omen 2017 - The Great Ace Attorney 2 Music Extended.mp3" fadein 3.0 volume 0.8
+
+        n "We know what to do next, it's okay"
+        p "Huh?"
+        hide nh
+        show nc:
+            center
+        a "Yeah, just listen to the boss here"
+        f "She knows"
+        n "I TOLD YOU NOT TO CALL ME THAT!"
+        a "Oopsie"
+        f "Old habits die hard"
+        n "Sigh"
+        hide nc
+        show nh:
+            center
+        n "Anyways, let us have a look shall we?"
+
+        stop music fadeout 3.0
+
+        f "Oh it's kinda like another video game reference!"
+        a "It's the same one as one of the reference in you mentioned earlier?"
+        f "Yeah!"
+
+        n "Enough guys! Because..."
+
+        a "Got"
+        f "it"
+
+        n "It's time..."
+        play music "audio/Partners ~ The Game is Afoot! - The Great Ace Attorney 2 Music Extended.mp3" fadein 3.0 volume 0.8
+
+        n "for the web department managers to take the main stage!"
+
+        scene error
+
+        show nh with moveinleft:
+            right
+
+        n "Let's debug here first"
+        n "What can we find out from here?"
+        p "Err..."
+        n "Haha, it's okay"
+        n "This is showing Error 500, which is an Internal Server Error"
+        n "I see someone is eager, take the stage!"
+
+        hide nh with moveoutright
+        show fsmile with moveinright:
+            center
+
+        f "Well, what "
+
+        return
