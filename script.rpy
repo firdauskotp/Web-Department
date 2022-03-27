@@ -1,4 +1,4 @@
-
+﻿
 #define convos
 define f = Character("Firdaus")
 define n = Character("Nasrin")
@@ -1483,6 +1483,9 @@ label start:
         show fsmile with moveinright:
             center
 
-        f "Well, what "
+        f "Well, one of the most common issues with an Error 500 is there is something wrong in the back end"
+        f "Let me have a look at the back end"
+        f "Hmm"
+        
 
         return
