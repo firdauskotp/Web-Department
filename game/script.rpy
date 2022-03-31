@@ -104,11 +104,6 @@ label start:
 
     p "Good day! My name is [player_name]"
 
-    menu:
-        "test":
-            $ final_trio = 1
-            jump lblEnd
-
     if var_name_times >0:
         hide ns
         show nh:
@@ -1471,6 +1466,7 @@ label start:
 
         show nh with moveinleft:
             right
+            ypos 1.3
 
         n "Let's debug here first"
         n "What can we find out from here?"
@@ -1482,10 +1478,48 @@ label start:
         hide nh with moveoutright
         show fsmile with moveinright:
             center
+            ypos 1.3
 
         f "Well, one of the most common issues with an Error 500 is there is something wrong in the back end"
         f "Let me have a look at the back end"
+        hide fsmile
+    
+        show fn:
+            center
+            ypos 1.3
         f "Hmm"
+        f "There seems to be a typo here"
+        f "You are currently receiving data from a variable that doesn't exist"
+        p "Ah I did not notice that!"
+
+        hide fn
+        show fsmile:
+            center
+            ypos 1.3
+
+        f "Chill, we sometimes tend to overlook things"
+        f "That is why code review exists, bro"
+
+        if gender == "female":
+            p "Bro?"
+            f "Eh sorry, sis"
+            p "Sigh"
+
+        show nh with moveinleft:
+            right
+            ypos 1.3
+
+        n "Yeah, but now you need to test it"
+        p "Alright"
+        p "Wow, it is working now! Thanks!"
+        f "HAHAHAHAHAHA"
+        p "Eh?"
+        n "It is now fully solved yet"
+        p "Wha..."
+        f "Let's call him"
+        n "Yeah! Come on and show the problem!"
+
         
+
 
         return

@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 78: expected menuitem
+    $ final_trio = 1
+    ^
+
+Ren'Py Version: Ren'Py 7.4.4.1439
+Thu Mar 24 21:42:51 2022
