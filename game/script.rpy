@@ -109,7 +109,10 @@ label start:
         show nh:
             right
 
-        n "Well, that took you around [var_name_times] tries!"
+        if var_name_times == 1:
+            n "Well, that took you around [var_name_times] try!"
+        else:
+            n "Well, that took you around [var_name_times] tries!"
 
         p "Sorryyyy"
 
@@ -1554,6 +1557,11 @@ label start:
 
         hide asc
         show as:
+            center
+            ypos 1.3
+        
+        a "Not really!"
+        p "Eh? How?"
             
 
         
