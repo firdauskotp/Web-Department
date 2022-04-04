@@ -1519,6 +1519,43 @@ label start:
         f "Let's call him"
         n "Yeah! Come on and show the problem!"
 
+        hide fn with moveoutright
+        hide nh with moveoutright
+        show ah with moveinleft:
+            center
+            ypos 1.3
+
+        a "There is no data shown yet"
+        a "And also, look at the different responsiveness, it doesn't look responsive at all!"
+        p "Oops"
+        a "You are doing the same mistake as Firdaus sometimes"
+
+        show fn with moveinleft:
+            right
+            ypos 1.3
+
+        f "That's a low blow, bro"
+
+        hide fn with moveoutleft
+
+        a "Obviously!"
+        a "Well, let's check your CSS"
+        a "Are you using a framework or vanilla CSS?"
+        p "Vanilla HTML, CSS and JS. I haven't implemented any CSS frameworks"
+
+        hide  ah
+        show asc:
+            center
+            ypos 1.3
+
+        a "I see, generally it is better to use frameworks"
+        p "I need to redo it, right?"
+        a "Well..."
+
+        hide asc
+        show as:
+            
+
         
 
 
