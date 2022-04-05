@@ -1,4 +1,4 @@
-﻿
+
 #define convos
 define f = Character("Firdaus")
 define n = Character("Nasrin")
@@ -1552,18 +1552,52 @@ label start:
             ypos 1.3
 
         a "I see, generally it is better to use frameworks"
-        p "I need to redo it, right?"
+        p "I need to redo it with bootstrap or Angular/React, right?"
+        f "ANGULAR ANGULAR ANGULAR!!"
+        n "Firdaus please keep quiet!"
+        f "UwU okay"
         a "Well..."
 
         hide asc
-        show as:
+        show asm:
             center
             ypos 1.3
         
         a "Not really!"
         p "Eh? How?"
-            
+        a "Well, you can use something called media queries"
 
+        show nh with moveinleft:
+            center
+            ypos 1.3
+        
+        n "It is generally better to use media queries"
+        a "I personally like to use bootstrap though, but true"
+        p "Really? I thought bootstrap was the way to go?"    
+        n "It is, but there was advice from someone in the front-end development field that bootstrap is for wireframe"
+        hide nh
+        hide asm
+        show asc:
+            center
+            ypos 1.3
+        show nc:
+            left
+            ypos 1.3
+        f "Two people actually lol. And media queries is the real thing to help, or some other frameworks I guess"
+        f "Wireframe is like the blueprint of the website"
+        f "Unless I heard it wrongly that is"
+        f "L0L"
+        a "If you were gonna cut in at least..."
+        n "show yourself, not hide around shouting!"
+        f "Nope, too shy, bye"
+        n "Sigh, anyways, continue on Ahmed"
+
+        hide nc with moveoutleft
+
+        hide asc
+        show ah:
+            center
+            ypos 1.3
         
 
 
