@@ -5,6 +5,7 @@ define n = Character("Nasrin", color="#ce1dce", what_color="#ce1dce")
 define a = Character("Ahmed", color="#1bb2d8", what_color="#1bb2d8")
 define p = Character("[player_name]")
 define w = Character("Waiter")
+define e = Character("Nasrin, Ahmed and Firdaus")
 
 #define locations
 image school_class = im.Scale("locations/class.jpg",1920,1080)
@@ -1359,7 +1360,10 @@ label start:
     label lblEnd:
         stop music fadeout 3.0
         play music "audio/DFInstrumental.mp3" fadein 3.0 volume 0.5
-        scene school
+        if ahmed_checker == 1 or firdaus_checker == 1 or nasrin_checker==1:
+            scene school with dissolve
+        else:
+            scene school
         show nh:
             center
         show fh with moveinleft:
@@ -1508,7 +1512,7 @@ label start:
             f "Eh sorry, sis"
             p "Sigh"
 
-        show nh with moveinleft:
+        show nh with moveinright:
             right
             ypos 1.3
 
@@ -1522,7 +1526,7 @@ label start:
         f "Let's call him"
         n "Yeah! Come on and show the problem!"
 
-        hide fn with moveoutright
+        hide fsmile with moveoutright
         hide nh with moveoutright
         show ah with moveinleft:
             center
@@ -1533,13 +1537,13 @@ label start:
         p "Oops"
         a "You are doing the same mistake as Firdaus sometimes"
 
-        show fn with moveinleft:
+        show fn with moveinright:
             right
             ypos 1.3
 
         f "That's a low blow, bro"
 
-        hide fn with moveoutleft
+        hide fn with moveoutright
 
         a "Obviously!"
         a "Well, let's check your CSS"
@@ -1568,7 +1572,7 @@ label start:
         a "Well, you can use something called media queries"
 
         show nh with moveinleft:
-            center
+            left
             ypos 1.3
         
         n "It is generally better to use media queries"
@@ -1598,7 +1602,142 @@ label start:
         show ah:
             center
             ypos 1.3
-        
 
+        p "Wow"
+        a "Just ignore that haha"
+        a "Anyways, let's add some different media queries for different devices"
+        p "Are you gonna do all of them?"
+        a "Of course not"
+        a "I just do some of them, and you do the rest for you to learn"
+        p "Aha alright, guess my..."
+        a "trick failed? Of course, I've been friends with these guys for some time you know"
+        a "So I am kinda used for it"
+        f "I HEARD THAT"
+        p "I see..."
+        p "Anyways if I fixed it up a little over here and added some CSS"
+        a "Yes, so when the screen is at a specific range size, it will use the different CSS files"
+        p "Hence making it responsive, right?"
+        a "Yeap, it will look nicer especially on mobile devices"
+        p "I see, got it. Let me add the respective files and change the codes"
+        p "There we go! Responsive! It works!"
+        a "Heh"
+        p "There's still more stuff to do?"
+        show ah with moveinleft:
+            right
+            ypos 1.3
+        
+        show fsmile with moveinleft:
+            left
+            ypos 1.3
+        
+        f "See your read feature"
+        p "Read feature?"
+        a "Firdaus wants to see when you get the data"
+        a "He likes to refer to it as read feature because it is part of the CRUD operation"
+        p "CRUD is Create, Read, Update and Delete, right?"
+        f "YESSIR"
+        f "Come on, show me the read feature haha"
+        p "O-ookay"
+        f "Welp, not working!"
+        p "Why are you happy about it?"
+        a "Because, it is time for her to take the spotlight"
+        hide ah with moveoutright
+        hide fsmile with moveoutleft
+        f "Let's give a proper intro"
+        a "to the boss!"
+        show nc with moveinright:
+            center
+            ypos 1.3
+        n "I am not going to comment on it anymore"
+        p "Are they always this annoying"
+        n "Kinda, in a fun way, I guess"
+        p "(That seems awkward)"
+
+        hide nc
+        show nh:
+            center
+            ypos 1.3
+
+        n "Anyways, a common error for this is your database is not connected or wrong queries are usd"
+        n "Let's see, what database are you using?"
+        p "I am using Firebase for this"
+        show fh with moveinleft:
+            left
+        
+        f "Ohh, that's your specialty!"
+        n "Isn't it yours too?"
+        f "Nope, only when it comes to mobile, not for web applications"
+        n "Just remember the concept"
+        n "Let's check if the connector file is downloaded"
+        f "Hmm, seems like it is"
+        n "Alright, now let's check the queries"
+        show ah with moveinright:
+            right
+            ypos 1.3
+
+        a "Ahh"
+        p "The query has a typo?"
+        n "Haha not quite"
+        n "Let's see on your firebase realtime database"
+        f "Hmm"
+        a "Yeahhh"
+        n "These two spotted the error already, did you find it?"
+        p "I think I do, there is no data"
+        n "Indeed, if there is no data, how can it be displayed?"
+        p "That is an easy fix, just save and the data shall be shown"
+        p "..."
+        n "Ahaha, well, your real problem lies in the saving"
+        f "The create feature!"
+        a "Do you know what that means?"
+        p "Err"
+        n "It means that when you save, the data is not being sent to your database to save"
+        n "You forgot your query!"
+        p "I was thinking so much of showing the data I forgot to save it -_-"
+        p "That is a really careless mistake on my part!"
+        f "Hey no worries, that's how we learn!"
+        a "Indeed, you think we haven't done mistakes like that?"
+        a "Right?"
+        n "Indeed, that is how you learn, don't worry about it."
+        n "So let's add the save query"
+        n "Now let's check whether it is working..."
+        n "Alright, data saved, now let's check when we get the data"
+        n "Tadaa"
+        a "Woooo"
+        f "A desirable result, but that is what to expect when Nasrin is doing it"
+        a "Yeahh!"
+        n "Do you want me to lose this smile?"
+        f "No no no"
+        a "Nooo"
+        n "Now then, check the whole program"
+        p "Wow, it is working better than before, and more undetected problems have been solved"
+        scene field with dissolve
+        show nh:
+            center
+        show ah:
+            right
+        show fh:
+            left
+        stop music fadeout 3.0
+        play music "audio/Ending Ballade (Remastered) - Fire Emblem- Genealogy of the Holy War.mp3" fadein 3.0 volume 0.5
+        p "Thank you! I learnt a lot from this"
+        n "That is the main purpose of us teaching you"
+        a "Indeed, if you aren't learning when we are teaching, we won't even help you"
+        f "Yep, we will just say farewell lol"
+        n "Anyways [player_name], did you enjoy that?"
+        p "I did!"
+        f "Eh?"
+        a "Enjoy what?"
+        n "[player_name] wanted to see us work together"
+        a "Ahh, no wonder"
+        p "It really was amazing! Thank you for showing me that, although unintentional."
+        f "Yeah kinda unintentional...?"
+        p "Hahaha"
+        p "Anyways, thanks, and I think for real, I need to go"
+        n "No worries, and sure, see you!"
+        a "Hope to see you soon in real life!"
+        f "In the meantime, keep on growing your skills!"
+        n "One, two, three"
+        e "Bye!"
+        p "Bye!"
 
         return
