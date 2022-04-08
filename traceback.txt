@@ -1,66 +1,63 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00start.rpy", line 208, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 387, in script
-    $ __gl_test()
-  File "renpy/common/00start.rpy", line 208, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 387, in script
-    $ __gl_test()
-  File "renpy/common/00gltest.rpy", line 387, in <module>
-    $ __gl_test()
-  File "renpy/common/00gltest.rpy", line 317, in _m1_00gltest__gl_test
-    _gl_performance_test()
-  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
-    ui.interact(suppress_underlay=True, suppress_overlay=True)
-IOError: Couldn't find file 'gui/(with background(edited in)daus 3'.
+While processing the color property of anonymous style:
+  File "game/script.rpy", line 77, in script
+    n "Good day!"
+ValueError: invalid literal for int() with base 16: 'pu'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 617, in main
-    run(restart)
-  File "renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "renpy/execution.py", line 922, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 208, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 387, in script
-    $ __gl_test()
-  File "renpy/common/00start.rpy", line 208, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 387, in script
-    $ __gl_test()
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gltest.rpy", line 387, in <module>
-    $ __gl_test()
-  File "renpy/common/00gltest.rpy", line 317, in _m1_00gltest__gl_test
-    _gl_performance_test()
-  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
-    ui.interact(suppress_underlay=True, suppress_overlay=True)
+  File "game/script.rpy", line 77, in script
+    n "Good day!"
+  File "renpy/ast.py", line 721, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports.py", line 1419, in say
+    who(what, *args, **kwargs)
+  File "renpy/character.py", line 1249, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 901, in do_display
+    **display_args)
+  File "renpy/character.py", line 647, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3062, in interact
-    self.start()
-  File "renpy/display/core.py", line 2105, in start
-    self.post_init()
-  File "renpy/display/core.py", line 2183, in post_init
-    self.set_icon()
-  File "renpy/display/core.py", line 2214, in set_icon
-    with renpy.loader.load(icon) as f:
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'gui/(with background(edited in)daus 3'.
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 441, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 570, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/text/text.py", line 1722, in per_interact
+    if self.style.slow_abortable:
+  File "gen-static/styleclass.pxi", line 773, in renpy.styledata.styleclass.Style.slow_abortable.__get__
+  File "style.pyx", line 493, in renpy.style.StyleCore._get
+  File "style.pyx", line 709, in renpy.style.build_style
+  File "style.pyx", line 706, in renpy.style.build_style
+  File "gen-static/style_functions.pyx", line 772, in style_functions.color_property
+  File "renpy/color.py", line 145, in __new__
+    r = int(c[0]+c[1], 16)
+ValueError: invalid literal for int() with base 16: 'pu'
 
 Windows-10-10.0.19041
-Ren'Py 7.4.4.1439
-web dept 3 1.0
-Fri Mar 25 11:33:05 2022
+Ren'Py 7.4.11.2266
+KidoCode Web Department 1.1.0
+Sat Apr  9 01:06:14 2022

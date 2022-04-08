@@ -1,8 +1,8 @@
-
+﻿
 #define convos
-define f = Character("Firdaus")
-define n = Character("Nasrin")
-define a = Character("Ahmed")
+define f = Character("Firdaus", color="#ce291d", what_color="#ce291d")
+define n = Character("Nasrin", color="#ce1dce", what_color="#ce1dce")
+define a = Character("Ahmed", color="#1bb2d8", what_color="#1bb2d8")
 define p = Character("[player_name]")
 define w = Character("Waiter")
 
