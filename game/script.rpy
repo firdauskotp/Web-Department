@@ -1,4 +1,4 @@
-﻿
+
 #define convos
 define f = Character("Firdaus", color="#ce291d", what_color="#ce291d")
 define n = Character("Nasrin", color="#ce1dce", what_color="#ce1dce")
@@ -1526,8 +1526,8 @@ label start:
         f "Let's call him"
         n "Yeah! Come on and show the problem!"
 
-        hide fsmile with moveoutright
         hide nh with moveoutright
+        hide fsmile with moveoutright
         show ah with moveinleft:
             center
             ypos 1.3
@@ -1663,6 +1663,7 @@ label start:
         p "I am using Firebase for this"
         show fh with moveinleft:
             left
+            ypos 1.3
         
         f "Ohh, that's your specialty!"
         n "Isn't it yours too?"
